@@ -32,3 +32,18 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+     # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # Configurar Minikube en GitHub Actions
+      - name: Setup K3s
+        uses: debianmaster/actions-k3s@master
+        id: k3s
+        with:
+          version: 'latest'
+
