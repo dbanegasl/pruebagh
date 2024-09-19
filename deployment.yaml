@@ -13,11 +13,11 @@ spec:
         app: python-flask-app
     spec:
       containers:
-        - name: python-flask-container
-          image: duotics/my-app:latest
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 5000
+      - name: python-flask-container
+        image: duotics/my-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
