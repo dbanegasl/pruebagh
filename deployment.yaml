@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: python-flask-container
-        image: duotics/my-app:latest
+        image: ${{ secrets.DOCKER_USERNAME }}/my-app:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
