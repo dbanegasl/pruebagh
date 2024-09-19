@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: python-flask-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: python-flask-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: python-flask-container
-        image: duotics/my-app:latest
+        image: juanurgilesc/my-app:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
